@@ -13,7 +13,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FEDRE — Graphic Design Portfolio</title>
+<title>FEDRE - Interaction Design Portfolio</title>
+<meta name="description" content="FEDRE - Interaction Design Portfolio">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FEDRE - Interaction Design Portfolio">
+<meta property="og:description" content="Creative Technologist and New Media Artist.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FEDRE - Interaction Design Portfolio">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-180.png">
 <style>
 
   :root{
@@ -4324,7 +4334,7 @@ icons.forEach(function(ic,k){ic.addEventListener('mouseleave',function(){var n=0
     folder.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); drawer.classList.contains('open')?close():open(); } else if(e.key==='Escape') close(); });
     drawer.addEventListener('mouseenter',()=>clearTimeout(t)); drawer.addEventListener('mouseleave',later);
     tiles.forEach(b=>{ b.addEventListener('mouseenter',()=>{ head.textContent=b.dataset.name; }); b.addEventListener('focus',()=>{ head.textContent=b.dataset.name; }); b.addEventListener('mouseleave',()=>{ head.textContent='Projects'; });
-      b.addEventListener('click',()=>{ close(); location.hash=b.dataset.id; }); });
+      b.addEventListener('click',()=>{ close(); const pw=document.getElementById('win-portfolio'); if(pw&&window.osWindows&&pw.classList.contains('hidden-win')) window.osWindows.show(pw); location.hash=b.dataset.id; }); });
     window.addEventListener('hashchange',()=>{ close(); mark(); });
   })();
 
